@@ -9,7 +9,7 @@ import (
 
 // Configuration 项目配置
 type Configuration struct {
-	// chatgpt35 apikey
+	// chat gpt35 api key
 	ApiKey string `json:"api_key"`
 	// 自动通过好友
 	AutoPass bool `json:"auto_pass"`

@@ -1,15 +1,13 @@
 package bootstrap
 
 import (
-	"github.com/869413421/wechatbot/handlers"
 	"github.com/eatmoreapple/openwechat"
+	"github.com/jackygan888/wechatbot/handlers"
 	"log"
 )
 
-
-
 func Run() {
-	//bot := openwechat.DefaultBot()
+
 	bot := openwechat.DefaultBot(openwechat.Desktop) // 桌面模式，上面登录不上的可以尝试切换这种模式
 
 	// 注册消息处理函数

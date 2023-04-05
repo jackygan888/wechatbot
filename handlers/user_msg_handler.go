@@ -1,8 +1,8 @@
 package handlers
 
 import (
-	gpt35 "github.com/869413421/wechatbot/chatgpt35"
 	"github.com/eatmoreapple/openwechat"
+	gpt35 "github.com/jackygan888/wechatbot/chatgpt35"
 	"log"
 	"strings"
 )
@@ -41,7 +41,7 @@ func (g *UserMessageHandler) ReplyText(msg *openwechat.Message) error {
 	// 向GPT发起请求
 	requestText := strings.TrimSpace(msg.Content)
 	requestText = strings.Trim(msg.Content, "\n")
-	reply, err := gpt35.Completions(sender.ID(),requestText)
+	reply, err := gpt35.Completions(sender.ID(), requestText)
 	if err != nil {
 		log.Printf("chatgpt request error: %v \n", err)
 		msg.ReplyText("机器人神了，我一会发现了就去修。")

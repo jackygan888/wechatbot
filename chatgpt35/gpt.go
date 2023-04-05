@@ -3,7 +3,7 @@ package gpt35
 import (
 	"bytes"
 	"encoding/json"
-	"github.com/869413421/wechatbot/config"
+	"github.com/jackygan888/wechatbot/config"
 	"io/ioutil"
 	"log"
 	"net/http"
@@ -15,7 +15,7 @@ func init() {
 	Cache = GetSessionCache()
 }
 
-func Completions(session,msg string) (string, error) {
+func Completions(session, msg string) (string, error) {
 
 	ms := Cache.GetMsg(session)
 	message := &Message{
@@ -24,12 +24,11 @@ func Completions(session,msg string) (string, error) {
 	}
 	ms = append(ms, *message)
 
-
 	requestBody := ChatGPTRequestBody{
-		Model:            "gpt-3.5-turbo",
-		Messages:           ms,
-		MaxTokens:        2048,
-		Temperature:      0.7,
+		Model:       "gpt-3.5-turbo",
+		Messages:    ms,
+		MaxTokens:   2048,
+		Temperature: 0.7,
 	}
 	requestData, err := json.Marshal(requestBody)
 

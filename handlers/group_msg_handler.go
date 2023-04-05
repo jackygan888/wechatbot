@@ -1,9 +1,8 @@
 package handlers
 
 import (
-	gpt35 "github.com/869413421/wechatbot/chatgpt35"
 	"github.com/eatmoreapple/openwechat"
-	"github.com/poorjobless/wechatbot/chatgpt"
+	gpt35 "github.com/jackygan888/wechatbot/chatgpt35"
 	"log"
 	"strings"
 )
@@ -47,7 +46,7 @@ func (g *GroupMessageHandler) ReplyText(msg *openwechat.Message) error {
 	// 替换掉@文本，然后向GPT发起请求
 	replaceText := "@" + sender.NickName
 	requestText := strings.TrimSpace(strings.ReplaceAll(msg.Content, replaceText, ""))
-	reply, err := gpt35.Completions(group.ID(),requestText)
+	reply, err := gpt35.Completions(group.ID(), requestText)
 	if err != nil {
 		log.Printf("chatgpt35 request error: %v \n", err)
 		msg.ReplyText("机器人神了，我一会发现了就去修。")
