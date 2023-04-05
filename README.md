@@ -1,5 +1,8 @@
 # wechatbot
-目前还在研究，功能还没经过测试，大家发现代码bug可以帮忙修改
+本项目使用了OpenAI最新（2023-03-02）发布的大型语言模型gpt-3.5-turbo以其API和基于[openwechat](https://github.com/eatmoreapple/openwechat)开发。
+# 当前版本
+当前版本使用的是gpt-3.5-turbo模型，
+当前版本不支持配置代理
 
 ###目前实现了以下功能
  + 群聊@回复
